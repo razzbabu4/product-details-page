@@ -1,13 +1,15 @@
 import { FaFacebook, FaInstagram, FaPlus, FaShoppingBag, FaTwitter, FaYoutube } from 'react-icons/fa';
-import productImage from '../assets/images/nipple-set.jpg'
+// import productImage from '../assets/images/nipple-set.jpg'
+import ProductSlider from './ProductSlider';
 
 const ProductDetailsPage = () => {
     return (
-        <div className="w-full max-h-screen p-6 lg:py-14 max-w-7xl mx-auto">
+        <div className="w-full min-h-screen p-6 lg:py-14 max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Product Image */}
                 <div className="w-full md:w-1/2">
-                    <img src={productImage} alt="Range Camera Bag" className="w-full h-auto md:h-[450px] rounded-lg object-cover" />
+                    {/* <img src={productImage} alt="Range Camera Bag" className="w-full h-auto md:h-[450px] rounded-lg object-cover" /> */}
+                    <ProductSlider/>
                 </div>
 
                 {/* Product Info */}
@@ -17,7 +19,7 @@ const ProductDetailsPage = () => {
                         <div className="rating rating-sm">
                             <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" checked/>
                             <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                             <input type="radio" name="rating-8" className="mask mask-star-2 bg-orange-400" />
                         </div>
@@ -80,11 +82,11 @@ const ProductDetailsPage = () => {
 
 
             {/* Additional Sections */}
-            <div className="mt-8">
+            <div className="mt-10">
                 <div className='flex flex-col md:flex-row gap-6'>
                     {/* Description Section */}
                     <div>
-                        <h2 className="text-xl font-semibold text-gray-800">Description</h2>
+                        <h2 className="text-xl font-semibold text-orange-400">Description</h2>
                         <p className="text-gray-600">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text since the 1500s.
                         </p>
@@ -92,7 +94,7 @@ const ProductDetailsPage = () => {
 
                     {/* Shipping Section */}
                     <div>
-                        <h2 className="text-xl font-semibold text-gray-800">Shipping</h2>
+                        <h2 className="text-xl font-semibold text-orange-400">Shipping</h2>
                         <p className="text-gray-600">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text since the 1500s.
                         </p>
@@ -101,7 +103,10 @@ const ProductDetailsPage = () => {
 
                 {/* Reviews Section */}
                 <div className='mt-8'>
-                    <h2 className="text-xl font-semibold text-gray-800">Reviews</h2>
+                    <div className='flex items-center justify-between mb-2'>
+                        <span className="text-xl font-semibold text-orange-400">Reviews</span>
+                        <span className="text-gray-700 font-medium">(22 user reviews)</span>
+                    </div>
                     <div className="border p-4 rounded-lg flex items-start space-x-4">
                         {/* User Image */}
                         <img src="https://via.placeholder.com/50" alt="User" className="rounded-full" />
@@ -114,7 +119,7 @@ const ProductDetailsPage = () => {
                             <input
                                 type="text"
                                 placeholder="Write your review here..."
-                                className="w-full mt-2 p-3 rounded focus:outline-none"
+                                className="w-full mt-2 p-3 rounded border focus:outline-none"
                             />
                         </div>
                     </div>
