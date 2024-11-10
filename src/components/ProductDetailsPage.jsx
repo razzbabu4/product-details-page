@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaPlus, FaShoppingBag, FaTwitter, FaYoutube } from 'react-icons/fa';
 // import productImage from '../assets/images/nipple-set.jpg'
 import ProductSlider from './ProductSlider';
+import ProductSliderDesktop from './ProductSliderDesktop';
 
 import 'animate.css';
 import { useEffect, useState } from 'react';
@@ -26,12 +27,14 @@ const ProductDetailsPage = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen md:max-h-screen p-6 lg:py-14 max-w-7xl mx-auto mb-10 md:mb-0">
+    <div className="w-full min-h-screen p-6 lg:py-14 max-w-7xl mx-auto mb-10">
       {/* Product Details */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Product Image */}
-        <div className="w-full md:w-1/2">
-          {/* <img src={productImage} alt="Range Camera Bag" className="w-full h-auto md:h-[450px] rounded-lg object-cover" /> */}
+        <div className="hidden md:w-1/2 md:flex">
+          <ProductSliderDesktop/>
+        </div>
+        <div className="w-full md:hidden">
           <ProductSlider/>
         </div>
 
@@ -42,7 +45,7 @@ const ProductDetailsPage = () => {
             <div className="rating rating-sm">
               <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" />
               <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" />
-              <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" checked />
+              <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" defaultChecked/>
               <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" />
               <input type="radio" name="rating-8" className="mask mask-star-2 bg-red-400" />
             </div>
@@ -109,7 +112,7 @@ const ProductDetailsPage = () => {
         <div className='flex flex-col md:flex-row gap-6'>
           {/* Description Section */}
           <div>
-            <h2 className="text-xl font-semibold text-red-400 uppercase">Description</h2>
+            <h2 className="text-lg md:text-xl font-semibold text-red-400 uppercase">Description</h2>
             <p className="text-gray-600">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text since the 1500s.
             </p>
@@ -117,7 +120,7 @@ const ProductDetailsPage = () => {
 
           {/* Shipping Section */}
           <div>
-            <h2 className="text-xl font-semibold text-red-400 uppercase">Shipping</h2>
+            <h2 className="text-lg md:text-xl font-semibold text-red-400 uppercase">Shipping</h2>
             <p className="text-gray-600">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text since the 1500s.
             </p>
@@ -127,7 +130,7 @@ const ProductDetailsPage = () => {
         {/* Reviews Section */}
         <div className='my-8 relative'>
           <div className='flex items-center justify-between mb-2'>
-            <span className="text-xl font-semibold text-red-400 uppercase">Reviews</span>
+            <span className="text-lg md:text-xl font-semibold text-red-400 uppercase">Reviews</span>
             <span className="text-gray-700 font-medium">(22 user reviews)</span>
           </div>
           <div className="border border-red-100 p-4 rounded-lg flex items-start space-x-4">
