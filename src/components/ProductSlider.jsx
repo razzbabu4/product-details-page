@@ -1,32 +1,44 @@
-import productImage from '../assets/images/nipple-set.jpg'
+import productImage from '../assets/images/image-1.jpg'
+import productImage2 from '../assets/images/image-2.jpg'
+import productImage3 from '../assets/images/image-3.jpg'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/effect-flip';
+import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 import '../components/SliderStyle.css';
 
 // import required modules
-import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+import { EffectCube, Pagination } from 'swiper/modules';
 
 const ProductSlider = () => {
   return (
     <>
       <Swiper
-        effect={"flip"}
+        effect={'cube'}
         grabCursor={true}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
         pagination={true}
-        navigation={true}
-        modules={[EffectFlip, Pagination, Navigation]}
+        modules={[EffectCube, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>
           <img src={productImage} alt="Product" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={productImage2} alt="Product" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={productImage3} alt="Product" />
         </SwiperSlide>
       </Swiper>
     </>
