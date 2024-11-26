@@ -2,6 +2,9 @@ import productImage from '../assets/images/image-1.jpg'
 // import productImage2 from '../assets/images/image-2.jpg'
 // import productImage3 from '../assets/images/image-3.jpg'
 
+// PropTypes validation
+import PropTypes from 'prop-types';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -41,6 +44,10 @@ const ProductSlider = ({ image }) => {
       </Swiper>
     </>
   );
+};
+
+ProductSlider.propTypes = {
+  image: PropTypes.string
 };
 
 export default ProductSlider;
