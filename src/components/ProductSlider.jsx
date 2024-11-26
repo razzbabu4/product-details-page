@@ -1,6 +1,6 @@
 import productImage from '../assets/images/image-1.jpg'
-import productImage2 from '../assets/images/image-2.jpg'
-import productImage3 from '../assets/images/image-3.jpg'
+// import productImage2 from '../assets/images/image-2.jpg'
+// import productImage3 from '../assets/images/image-3.jpg'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +15,7 @@ import '../components/SliderStyle.css';
 // import required modules
 import { EffectCube, Pagination } from 'swiper/modules';
 
-const ProductSlider = () => {
+const ProductSlider = ({ image }) => {
   return (
     <>
       <Swiper
@@ -32,14 +32,12 @@ const ProductSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={productImage} alt="Product" />
+          <img src={image} alt="Product" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={productImage2} alt="Product" />
+          <img src={image || productImage} alt="Product" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={productImage3} alt="Product" />
-        </SwiperSlide>
+
       </Swiper>
     </>
   );
